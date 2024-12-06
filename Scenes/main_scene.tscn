@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dglxuogqtqkqp"]
+[gd_scene load_steps=4 format=3 uid="uid://dglxuogqtqkqp"]
 
 [ext_resource type="Texture2D" uid="uid://cqrxqctpifwtj" path="res://Art/BGMainMenu/background_glacial_mountains.png" id="1_h1e60"]
 [ext_resource type="Script" path="res://Scripts/main_scene.gd" id="1_q7h74"]
+[ext_resource type="AudioStream" uid="uid://cwl5jbp6gvcmd" path="res://Sound/меню(начало).mp3" id="3_03wr8"]
 
 [node name="MainScene" type="CanvasLayer"]
 script = ExtResource("1_q7h74")
@@ -68,5 +69,11 @@ offset_right = 483.0
 offset_bottom = 451.0
 theme_override_font_sizes/font_size = 40
 text = "Start game"
+
+[node name="mainost" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_03wr8")
+volume_db = -16.865
+autoplay = true
+parameters/looping = false
 
 [connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
