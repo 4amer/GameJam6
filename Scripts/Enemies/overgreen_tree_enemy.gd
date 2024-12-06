@@ -5,8 +5,13 @@ extends CharacterBody2D
 
 var player = null;
 
+func init(body: Node2D):
+	player = body;
+	self.show();
+
 func _ready():
 	print("iuiyiyuiy");
+	self.hide();
 	pass
 
 func _physics_process(delta: float) -> void:
@@ -26,8 +31,3 @@ func enemy():
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.has_method("projectile"):
 		SubstractHP();
-
-
-func _on_area_2d_2_body_entered(body: Node2D) -> void:
-	if(body.has_method("player")):
-		player = get_parent().get_node("Character")
