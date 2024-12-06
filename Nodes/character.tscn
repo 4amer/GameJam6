@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://4cfkabw8j0ss"]
+[gd_scene load_steps=8 format=3 uid="uid://4cfkabw8j0ss"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_hhvta"]
 [ext_resource type="Texture2D" uid="uid://bbm3m5a71qsp1" path="res://Art/Player/present.png" id="2_guif2"]
 [ext_resource type="Texture2D" uid="uid://bl2mrcv6whkw1" path="res://Art/UI/baricon2.png" id="3_y576h"]
+[ext_resource type="AudioStream" uid="uid://bbxcoj22f4x3j" path="res://Sound/gunshoot.mp3" id="4_d7f2h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjcrb"]
 size = Vector2(126, 126)
@@ -111,6 +112,10 @@ offset_bottom = 480.0
 theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
 text = "[center][wave]GAME OVER"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_d7f2h")
+volume_db = -11.886
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

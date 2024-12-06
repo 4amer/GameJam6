@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://c8gwjp00t4b57"]
+[gd_scene load_steps=18 format=3 uid="uid://c8gwjp00t4b57"]
 
 [ext_resource type="Texture2D" uid="uid://bwcjrtbxll7wo" path="res://Art/Tiles/tileset.png" id="1_51nh5"]
+[ext_resource type="Script" path="res://Scripts/forest.gd" id="1_sjise"]
 [ext_resource type="Texture2D" uid="uid://dfrc2v247wyvu" path="res://Art/Tiles/Assets.png" id="2_60y3q"]
 [ext_resource type="PackedScene" uid="uid://d0j3xom6hx16f" path="res://Nodes/Enemies/base_enemy.tscn" id="3_avuvj"]
 [ext_resource type="PackedScene" uid="uid://4cfkabw8j0ss" path="res://Nodes/character.tscn" id="4_rr8qr"]
@@ -9,6 +10,7 @@
 [ext_resource type="PackedScene" path="res://Nodes/bosses/init_dead_morouze_trigger.tscn" id="8_7fr45"]
 [ext_resource type="PackedScene" uid="uid://wbew8uvxi75k" path="res://Nodes/bosses/dead_morouze.tscn" id="9_f65jj"]
 [ext_resource type="PackedScene" path="res://Nodes/obstacles/tree_obstacle.tscn" id="10_gld4h"]
+[ext_resource type="AudioStream" uid="uid://caw32yf5jhiek" path="res://Sound/сражение.mp3" id="11_gv4pe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gmfr5"]
 texture = ExtResource("1_51nh5")
@@ -1605,6 +1607,7 @@ color = Color(0, 0, 0, 0)
 color = Color(0.910947, 0.0296901, 0.178854, 1)
 
 [node name="GamePlayField" type="Node2D"]
+script = ExtResource("1_sjise")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -1729,3 +1732,6 @@ offset_bottom = 596.0
 bbcode_enabled = true
 text = "[wave][rainbow]DEAD MOROUZE"
 tab_size = 10
+
+[node name="AudioStreamPlayer2D22" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_gv4pe")
