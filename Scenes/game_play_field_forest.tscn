@@ -1617,8 +1617,40 @@ layer_1/tile_data = PackedInt32Array(-1441776, 262144, 20, -1376240, 262144, 21,
 position = Vector2(-112, -201)
 hp = 2
 
+[node name="BaseEnemy2" parent="." instance=ExtResource("3_avuvj")]
+position = Vector2(-46, -157)
+hp = 2
+
+[node name="BaseEnemy3" parent="." instance=ExtResource("3_avuvj")]
+position = Vector2(-10, -225)
+hp = 2
+
+[node name="BaseEnemy4" parent="." instance=ExtResource("3_avuvj")]
+position = Vector2(115, -258)
+hp = 2
+
+[node name="BaseEnemy5" parent="." instance=ExtResource("3_avuvj")]
+position = Vector2(259, -269)
+hp = 2
+
+[node name="BaseEnemy6" parent="." instance=ExtResource("3_avuvj")]
+position = Vector2(586, -431)
+hp = 2
+
+[node name="BaseEnemy7" parent="." instance=ExtResource("3_avuvj")]
+position = Vector2(606, 28)
+hp = 2
+
+[node name="BaseEnemy8" parent="." instance=ExtResource("3_avuvj")]
+position = Vector2(852, -183)
+hp = 2
+
+[node name="BaseEnemy9" parent="." instance=ExtResource("3_avuvj")]
+position = Vector2(331, -96)
+hp = 2
+
 [node name="Character" parent="." instance=ExtResource("4_rr8qr")]
-position = Vector2(577, -692)
+position = Vector2(-15, 40)
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
 zoom = Vector2(3, 3)
@@ -1667,10 +1699,12 @@ position = Vector2(573, -797)
 scale = Vector2(35.52, 1)
 deadMorouze = NodePath("../DeadMorouze")
 
-[node name="DeadMorouze" parent="." node_paths=PackedStringArray("obstacle", "pointToSetPosition") instance=ExtResource("9_f65jj")]
+[node name="DeadMorouze" parent="." node_paths=PackedStringArray("obstacle", "pointToSetPosition", "hpBar", "HpWindow") instance=ExtResource("9_f65jj")]
 position = Vector2(574, -865)
 obstacle = NodePath("../TreeObstacle")
 pointToSetPosition = NodePath("../Node2D")
+hpBar = NodePath("../CanvasLayer/DedMorozeHP/ProgressBar")
+HpWindow = NodePath("../CanvasLayer/DedMorozeHP")
 
 [node name="TreeObstacle" parent="." instance=ExtResource("10_gld4h")]
 position = Vector2(545, -718)

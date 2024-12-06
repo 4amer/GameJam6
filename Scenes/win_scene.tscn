@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwpua0womu8nj"]
+
+[ext_resource type="Script" path="res://Scenes/win_scene.gd" id="1_1wvoh"]
+[ext_resource type="Texture2D" uid="uid://cqrxqctpifwtj" path="res://Art/BGMainMenu/background_glacial_mountains.png" id="2_pihvt"]
+
+[node name="MainScene" type="CanvasLayer"]
+script = ExtResource("1_1wvoh")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_pihvt")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 275.0
+offset_top = 79.0
+offset_right = 875.0
+offset_bottom = 279.0
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[wave][center] YOU WIN"
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 337.0
+offset_right = 738.0
+offset_bottom = 437.0
+theme_override_font_sizes/font_size = 40
+text = "Go to menu"
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

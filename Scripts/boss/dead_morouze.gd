@@ -6,12 +6,13 @@ var hp = 100;
 var currentSpeed = 100;
 
 var first_phase_speed = 3;
-var second_phase_speed = 4;
 
 @export var obstacle : Node2D;
 @export var pointToSetPosition : Node2D;
 @export var hpBar : ProgressBar;
 @export var HpWindow : Panel;
+
+var treeEnemy = preload("res://Nodes/Enemies/overgreen_tree_enemy.tscn");
 
 var isFightStarted = false;
 var movementDone = false;
@@ -42,7 +43,8 @@ func start_first_phase():
 	pass;
 
 func start_second_phase():
-	currentSpeed = second_phase_speed;
+	currentSpeed = first_phase_speed;
+	$SpawnElfTimer.start();
 	pass;
 
 func _on_run_timer_timeout() -> void:
@@ -61,3 +63,16 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func SunstractHP():
 	hp -= 1;
 	hpBar.value = hp;
+	if hp == 50:
+		start_second_phase();
+	
+	if hp <= 0:
+		get_tree().change_scene_to_file("res://Scenes/win_scene.tscn");
+
+
+func _on_spawn_elf_timer_timeout() -> void:
+	var enemy_instance = treeEnemy.instantiate()
+	enemy_instance.position = position;
+	enemy_instance.init(player);
+	get_tree().get_root().call_deferred("add_child", enemy_instance);
+	pass # Replace with function body.
