@@ -1,15 +1,16 @@
 extends CharacterBody2D
 
 @export var hp: int = 1;
+@export var speed: int = 100;
+
+var player = null;
 
 func _ready():
 	pass
 
 func _physics_process(delta: float) -> void:
-	var player = get_parent().get_node("Character")
-	
-	position += (player.position - position) / 100
-	
+	if player != null:
+		position += (player.position - position).normalized();
 	move_and_slide()
 
 func SubstractHP():
@@ -22,5 +23,10 @@ func enemy():
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "Projectile_Coal":
+	if body.has_method("projectile"):
 		SubstractHP();
+
+
+func _on_area_2d_2_body_entered(body: Node2D) -> void:
+	if(body.has_method("player")):
+		player = get_parent().get_node("Character")

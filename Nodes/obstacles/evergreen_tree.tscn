@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://bp5xuj7160746"]
+
+[ext_resource type="Script" path="res://Scripts/obstacles/evergreen_tree.gd" id="1_5qmxt"]
+[ext_resource type="Texture2D" uid="uid://bwcjrtbxll7wo" path="res://Art/Tiles/tileset.png" id="2_rlv1g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eiopu"]
+size = Vector2(20, 38)
+
+[sub_resource type="Theme" id="Theme_b4ckl"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_bu5u8"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_3eb0c"]
+color = Color(1, 0.300051, 0.236805, 1)
+
+[node name="EvergreenTree" type="Node2D"]
+script = ExtResource("1_5qmxt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_rlv1g")
+region_enabled = true
+region_rect = Rect2(32, 304, 32, 48)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_eiopu")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -13.0
+offset_top = -36.0
+offset_right = -9.0
+offset_bottom = -9.0
+scale = Vector2(6.88, 5.28)
+theme = SubResource("Theme_b4ckl")
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_styles/background = SubResource("StyleBoxLine_bu5u8")
+theme_override_styles/fill = SubResource("StyleBoxLine_3eb0c")
+max_value = 5.0
+value = 5.0
+show_percentage = false
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,14 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://44b5cn2gupkx"]
+[gd_scene load_steps=10 format=3 uid="uid://c8gwjp00t4b57"]
 
-[ext_resource type="PackedScene" uid="uid://4cfkabw8j0ss" path="res://Nodes/character.tscn" id="1_bu58g"]
-[ext_resource type="PackedScene" uid="uid://d0j3xom6hx16f" path="res://Nodes/Enemies/base_enemy.tscn" id="2_xp73g"]
-[ext_resource type="Texture2D" uid="uid://bwcjrtbxll7wo" path="res://Art/Tiles/tileset.png" id="3_077sg"]
-[ext_resource type="Texture2D" uid="uid://dfrc2v247wyvu" path="res://Art/Tiles/Assets.png" id="4_dny5u"]
-[ext_resource type="PackedScene" uid="uid://bvvqjwe5jk2r2" path="res://Nodes/obstacles/vine.tscn" id="5_lb4xq"]
-[ext_resource type="PackedScene" uid="uid://bp5xuj7160746" path="res://Nodes/obstacles/evergreen_tree.tscn" id="6_35thb"]
+[ext_resource type="Texture2D" uid="uid://bwcjrtbxll7wo" path="res://Art/Tiles/tileset.png" id="1_51nh5"]
+[ext_resource type="Texture2D" uid="uid://dfrc2v247wyvu" path="res://Art/Tiles/Assets.png" id="2_60y3q"]
+[ext_resource type="PackedScene" uid="uid://d0j3xom6hx16f" path="res://Nodes/Enemies/base_enemy.tscn" id="3_avuvj"]
+[ext_resource type="PackedScene" uid="uid://4cfkabw8j0ss" path="res://Nodes/character.tscn" id="4_rr8qr"]
+[ext_resource type="PackedScene" uid="uid://bvvqjwe5jk2r2" path="res://Nodes/obstacles/vine.tscn" id="5_klmf7"]
+[ext_resource type="PackedScene" uid="uid://bp5xuj7160746" path="res://Nodes/obstacles/evergreen_tree.tscn" id="6_qe7b2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gmfr5"]
-texture = ExtResource("3_077sg")
+texture = ExtResource("1_51nh5")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1099,7 +1099,7 @@ texture = ExtResource("3_077sg")
 17:24/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_seqqt"]
-texture = ExtResource("4_dny5u")
+texture = ExtResource("2_60y3q")
 2:0/0 = 0
 3:0/0 = 0
 4:0/0 = 0
@@ -1484,55 +1484,55 @@ layer_0/tile_data = PackedInt32Array(-2, 458753, 8, 65534, 458753, 9, 65535, 524
 layer_1/name = "Layer1"
 layer_1/tile_data = PackedInt32Array(131075, 327681, 19, 131076, 393217, 19, 131077, 327681, 20, 65541, 327681, 19, 65542, 327681, 20, 327681, 327681, 22, 327680, 262145, 22, 262144, 262145, 20, 262145, 327681, 20, 196610, 393217, 19, 196609, 327681, 19, 196611, 327681, 20, 262146, 393217, 21, 327682, 393217, 21, 393218, 393217, 21, 262147, 393217, 21, 327683, 393217, 21, 393219, 393217, 21, 262148, 393217, 21, 327684, 393217, 21, 393220, 393217, 21, 262149, 393217, 21, 327685, 393217, 21, 393221, 393217, 21, 262150, 393217, 21, 327686, 393217, 21, 393222, 393217, 21, 196612, 393217, 21, 196613, 393217, 21, 196614, 393217, 21, 196615, 393217, 21, 131078, 393217, 21, 131079, 393217, 21, -1835014, 524289, 11, -1703940, 524289, 11, -1769479, 655361, 10, -1769477, 393217, 10, -1572871, 589825, 7, -1572869, 458753, 7, -1638404, 458753, 7, -1572870, 524289, 7, -1769464, 589825, 7, -1835001, 589825, 7, -1834999, 458753, 7, -1900534, 458753, 7, -1900537, 524289, 11, -1900536, 524289, 11, -1900535, 524289, 11, -1507322, 524289, 11, -1441784, 524289, 11, -1441785, 458753, 11, -1376247, 458753, 11)
 
-[node name="BaseEnemy" parent="." instance=ExtResource("2_xp73g")]
+[node name="BaseEnemy" parent="." instance=ExtResource("3_avuvj")]
 position = Vector2(-112, -201)
 hp = 2
 
-[node name="BaseEnemy2" parent="." instance=ExtResource("2_xp73g")]
+[node name="BaseEnemy2" parent="." instance=ExtResource("3_avuvj")]
 position = Vector2(4, -159)
 hp = 2
 
-[node name="BaseEnemy3" parent="." instance=ExtResource("2_xp73g")]
+[node name="BaseEnemy3" parent="." instance=ExtResource("3_avuvj")]
 position = Vector2(221, -201)
 hp = 2
 
-[node name="BaseEnemy4" parent="." instance=ExtResource("2_xp73g")]
+[node name="BaseEnemy4" parent="." instance=ExtResource("3_avuvj")]
 position = Vector2(222, -154)
 hp = 2
 
-[node name="BaseEnemy5" parent="." instance=ExtResource("2_xp73g")]
+[node name="BaseEnemy5" parent="." instance=ExtResource("3_avuvj")]
 position = Vector2(187, -179)
 hp = 2
 
-[node name="BaseEnemy6" parent="." instance=ExtResource("2_xp73g")]
+[node name="BaseEnemy6" parent="." instance=ExtResource("3_avuvj")]
 position = Vector2(316, -330)
 hp = 2
 
-[node name="BaseEnemy7" parent="." instance=ExtResource("2_xp73g")]
+[node name="BaseEnemy7" parent="." instance=ExtResource("3_avuvj")]
 position = Vector2(385, -331)
 hp = 2
 
-[node name="BaseEnemy8" parent="." instance=ExtResource("2_xp73g")]
+[node name="BaseEnemy8" parent="." instance=ExtResource("3_avuvj")]
 position = Vector2(350, -368)
 hp = 2
 
-[node name="BaseEnemy9" parent="." instance=ExtResource("2_xp73g")]
+[node name="BaseEnemy9" parent="." instance=ExtResource("3_avuvj")]
 position = Vector2(146, -402)
 hp = 2
 
-[node name="BaseEnemy10" parent="." instance=ExtResource("2_xp73g")]
+[node name="BaseEnemy10" parent="." instance=ExtResource("3_avuvj")]
 position = Vector2(-55, -357)
 hp = 2
 
-[node name="BaseEnemy11" parent="." instance=ExtResource("2_xp73g")]
+[node name="BaseEnemy11" parent="." instance=ExtResource("3_avuvj")]
 position = Vector2(-3, -356)
 hp = 2
 
-[node name="BaseEnemy12" parent="." instance=ExtResource("2_xp73g")]
+[node name="BaseEnemy12" parent="." instance=ExtResource("3_avuvj")]
 position = Vector2(-28, -414)
 hp = 2
 
-[node name="Character" parent="." instance=ExtResource("1_bu58g")]
+[node name="Character" parent="." instance=ExtResource("4_rr8qr")]
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
 zoom = Vector2(3, 3)
@@ -1541,77 +1541,77 @@ position_smoothing_speed = 0.0
 [node name="VineDoor1" type="Node2D" parent="."]
 position = Vector2(10, -295)
 
-[node name="Node2D" parent="VineDoor1" instance=ExtResource("5_lb4xq")]
+[node name="Node2D" parent="VineDoor1" instance=ExtResource("5_klmf7")]
 position = Vector2(-64, 0)
 
-[node name="Node2D2" parent="VineDoor1" instance=ExtResource("5_lb4xq")]
+[node name="Node2D2" parent="VineDoor1" instance=ExtResource("5_klmf7")]
 position = Vector2(-48, 0)
 
-[node name="Node2D3" parent="VineDoor1" instance=ExtResource("5_lb4xq")]
+[node name="Node2D3" parent="VineDoor1" instance=ExtResource("5_klmf7")]
 position = Vector2(-32, 0)
 
-[node name="Node2D4" parent="VineDoor1" instance=ExtResource("5_lb4xq")]
+[node name="Node2D4" parent="VineDoor1" instance=ExtResource("5_klmf7")]
 position = Vector2(-16, 0)
 
-[node name="Node2D5" parent="VineDoor1" instance=ExtResource("5_lb4xq")]
+[node name="Node2D5" parent="VineDoor1" instance=ExtResource("5_klmf7")]
 
 [node name="VineDoor2" type="Node2D" parent="."]
 position = Vector2(394, -279)
 
-[node name="Node2D" parent="VineDoor2" instance=ExtResource("5_lb4xq")]
+[node name="Node2D" parent="VineDoor2" instance=ExtResource("5_klmf7")]
 position = Vector2(-64, 0)
 
-[node name="Node2D2" parent="VineDoor2" instance=ExtResource("5_lb4xq")]
+[node name="Node2D2" parent="VineDoor2" instance=ExtResource("5_klmf7")]
 position = Vector2(-48, 0)
 
-[node name="Node2D3" parent="VineDoor2" instance=ExtResource("5_lb4xq")]
+[node name="Node2D3" parent="VineDoor2" instance=ExtResource("5_klmf7")]
 position = Vector2(-32, 0)
 
-[node name="Node2D4" parent="VineDoor2" instance=ExtResource("5_lb4xq")]
+[node name="Node2D4" parent="VineDoor2" instance=ExtResource("5_klmf7")]
 position = Vector2(-16, 0)
 
 [node name="VineDoor3" type="Node2D" parent="."]
 position = Vector2(185, -511)
 
-[node name="Node2D" parent="VineDoor3" instance=ExtResource("5_lb4xq")]
+[node name="Node2D" parent="VineDoor3" instance=ExtResource("5_klmf7")]
 position = Vector2(-64, 0)
 
-[node name="Node2D2" parent="VineDoor3" instance=ExtResource("5_lb4xq")]
+[node name="Node2D2" parent="VineDoor3" instance=ExtResource("5_klmf7")]
 position = Vector2(-48, 0)
 
-[node name="Node2D3" parent="VineDoor3" instance=ExtResource("5_lb4xq")]
+[node name="Node2D3" parent="VineDoor3" instance=ExtResource("5_klmf7")]
 position = Vector2(-32, 0)
 
-[node name="Node2D4" parent="VineDoor3" instance=ExtResource("5_lb4xq")]
+[node name="Node2D4" parent="VineDoor3" instance=ExtResource("5_klmf7")]
 position = Vector2(-16, 0)
 
 [node name="VineDoor4" type="Node2D" parent="."]
 position = Vector2(185, -543)
 
-[node name="Node2D" parent="VineDoor4" instance=ExtResource("5_lb4xq")]
+[node name="Node2D" parent="VineDoor4" instance=ExtResource("5_klmf7")]
 position = Vector2(-64, 0)
 
-[node name="Node2D2" parent="VineDoor4" instance=ExtResource("5_lb4xq")]
+[node name="Node2D2" parent="VineDoor4" instance=ExtResource("5_klmf7")]
 position = Vector2(-48, 0)
 
-[node name="Node2D3" parent="VineDoor4" instance=ExtResource("5_lb4xq")]
+[node name="Node2D3" parent="VineDoor4" instance=ExtResource("5_klmf7")]
 position = Vector2(-32, 0)
 
-[node name="Node2D4" parent="VineDoor4" instance=ExtResource("5_lb4xq")]
+[node name="Node2D4" parent="VineDoor4" instance=ExtResource("5_klmf7")]
 position = Vector2(-16, 0)
 
-[node name="EvergreenTree" parent="." node_paths=PackedStringArray("door") instance=ExtResource("6_35thb")]
+[node name="EvergreenTree" parent="." node_paths=PackedStringArray("door") instance=ExtResource("6_qe7b2")]
 position = Vector2(-85, -428)
 door = NodePath("../VineDoor4")
 
-[node name="EvergreenTree2" parent="." node_paths=PackedStringArray("door") instance=ExtResource("6_35thb")]
+[node name="EvergreenTree2" parent="." node_paths=PackedStringArray("door") instance=ExtResource("6_qe7b2")]
 position = Vector2(144, -460)
 door = NodePath("../VineDoor3")
 
-[node name="EvergreenTree3" parent="." node_paths=PackedStringArray("door") instance=ExtResource("6_35thb")]
+[node name="EvergreenTree3" parent="." node_paths=PackedStringArray("door") instance=ExtResource("6_qe7b2")]
 position = Vector2(124, -343)
 door = NodePath("../VineDoor1")
 
-[node name="EvergreenTree4" parent="." node_paths=PackedStringArray("door") instance=ExtResource("6_35thb")]
+[node name="EvergreenTree4" parent="." node_paths=PackedStringArray("door") instance=ExtResource("6_qe7b2")]
 position = Vector2(364, -170)
 door = NodePath("../VineDoor2")

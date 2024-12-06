@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
+const SPEED = 100.0
 @export var bullet_speed = 1000;
 @export var projectile_scene = preload("res://Nodes/Projectiles/projectile_coal.tscn");
 
@@ -33,5 +33,9 @@ func spawn_projectile() -> void:
 	bullet_instance.position = $aim/shooterPoint.global_position;
 	bullet_instance.rotation_degrees = $aim.rotation_degrees;
 	bullet_instance.apply_impulse(Vector2(bullet_speed, 0).rotated($aim.rotation))
+	bullet_instance.name = "Projectile_Coal";
 	get_tree().get_root().call_deferred("add_child", bullet_instance);
 	
+
+func player():
+	pass
