@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0j3xom6hx16f"]
+[gd_scene load_steps=8 format=3 uid="uid://d0j3xom6hx16f"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/base_enemy.gd" id="1_xrmuu"]
 [ext_resource type="Texture2D" uid="uid://scxb2rqcd4bg" path="res://Art/global.png" id="2_vlgao"]
+[ext_resource type="AudioStream" uid="uid://cu7s2qg7rv1k5" path="res://Sound/hit.mp3" id="3_mg0f4"]
+[ext_resource type="AudioStream" uid="uid://nnk8srrfp40" path="res://Sound/characterhit.mp3" id="4_sslt4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mr04o"]
 size = Vector2(75, 128)
@@ -31,6 +33,12 @@ region_rect = Rect2(49, 39, 15, 25)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_cxit8")
+
+[node name="hit" type="AudioStreamPlayer2D" parent="Area2D"]
+stream = ExtResource("3_mg0f4")
+
+[node name="mobdeath" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_sslt4")
 
 [node name="Area2D2" type="Area2D" parent="."]
 

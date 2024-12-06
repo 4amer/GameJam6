@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://jl70w1dcid0g"
+path="res://.godot/imported/смерть мобов.mp3-824fa36a49a32788fd38a138e3d02766.mp3str"
+
+[deps]
+
+source_file="res://Sound/смерть мобов.mp3"
+dest_files=["res://.godot/imported/смерть мобов.mp3-824fa36a49a32788fd38a138e3d02766.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

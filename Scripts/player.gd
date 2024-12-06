@@ -51,6 +51,7 @@ func spawn_projectile() -> void:
 	bullet_instance.apply_impulse(Vector2(bullet_speed, 0).rotated($aim.rotation))
 	bullet_instance.name = "Projectile_Coal";
 	get_tree().get_root().call_deferred("add_child", bullet_instance);
+	$aim/shooterPoint/gunsound.play()
 
 func player():
 	pass;
@@ -65,14 +66,19 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func sunstractHP():
 	hp -= 1;
 	if hp == 2:
+		$characterhit.play()
 		imageHP1.show();
 		imageHP2.show();
 		imageHP3.hide();
+		
 	if hp == 1:
+		$characterhit.play()
 		imageHP1.show();
 		imageHP2.hide();
 		imageHP3.hide();
 	if hp == 0:
+		$characterhit.play()
+		$death.play()
 		isGameOver = true;
 		$CanvasLayer/GameOverWindow.show();
 		$CanvasLayer/InGameWindow.hide();
