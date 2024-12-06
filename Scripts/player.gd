@@ -31,9 +31,6 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 	
-	if direction.x or direction.y != 0:
-		$walking.play()
-	
 	if Input.is_action_just_pressed("Shoot"):
 		if isRealod == false:
 			spawn_projectile();

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var stageCounter = 1;
-var hp = 100;
+var hp = 80;
 
 var currentSpeed = 100;
 
@@ -34,7 +34,6 @@ func _physics_process(delta: float) -> void:
 	print(position.distance_to(playerPosition))
 	if(position.distance_to(playerPosition) <= 5):
 		movementDone = true;
-		
 	move_and_slide()
 
 func start_first_phase():
@@ -63,7 +62,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func SunstractHP():
 	hp -= 1;
 	hpBar.value = hp;
-	if hp == 50:
+	if hp <= 40:
 		start_second_phase();
 	
 	if hp <= 0:
@@ -72,7 +71,6 @@ func SunstractHP():
 
 func _on_spawn_elf_timer_timeout() -> void:
 	var enemy_instance = treeEnemy.instantiate()
-	enemy_instance.position = position;
-	enemy_instance.init(player);
 	get_tree().get_root().call_deferred("add_child", enemy_instance);
-	pass # Replace with function body.
+	enemy_instance.init(player);
+	enemy_instance.global_position = global_position;

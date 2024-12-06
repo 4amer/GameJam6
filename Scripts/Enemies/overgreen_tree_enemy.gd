@@ -7,11 +7,10 @@ var player = null;
 
 func init(body: Node2D):
 	player = body;
-	self.show();
+	$".".show();
+	$Sprite2D.show();
 
 func _ready():
-	print("iuiyiyuiy");
-	self.hide();
 	pass
 
 func _physics_process(delta: float) -> void:

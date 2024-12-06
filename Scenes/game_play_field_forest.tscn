@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://dfrc2v247wyvu" path="res://Art/Tiles/Assets.png" id="2_60y3q"]
 [ext_resource type="PackedScene" uid="uid://d0j3xom6hx16f" path="res://Nodes/Enemies/base_enemy.tscn" id="3_avuvj"]
 [ext_resource type="PackedScene" uid="uid://4cfkabw8j0ss" path="res://Nodes/character.tscn" id="4_rr8qr"]
-[ext_resource type="PackedScene" uid="uid://bvvqjwe5jk2r2" path="res://Nodes/obstacles/vine.tscn" id="5_klmf7"]
 [ext_resource type="PackedScene" uid="uid://br6fmq5flxfkf" path="res://Nodes/obstacles/evergree_tree_snowy.tscn" id="6_l4noe"]
 [ext_resource type="PackedScene" uid="uid://ls6mgl53ylni" path="res://Nodes/Enemies/overgreen_tree_enemy.tscn" id="7_q60ow"]
 [ext_resource type="PackedScene" uid="uid://cks3r28xlo46l" path="res://Nodes/bosses/init_dead_morouze_trigger.tscn" id="8_7fr45"]
@@ -1597,6 +1596,9 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_gmfr5")
 sources/1 = SubResource("TileSetAtlasSource_seqqt")
 
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_eet5i"]
+color = Color(0, 0, 0, 0)
+
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_b6d1b"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_lcjyw"]
@@ -1650,34 +1652,18 @@ position = Vector2(331, -96)
 hp = 2
 
 [node name="Character" parent="." instance=ExtResource("4_rr8qr")]
-position = Vector2(-15, 40)
+position = Vector2(-3, 31)
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
 zoom = Vector2(3, 3)
 position_smoothing_speed = 0.0
-
-[node name="VineDoor1" type="Node2D" parent="."]
-position = Vector2(10, -295)
-
-[node name="Node2D" parent="VineDoor1" instance=ExtResource("5_klmf7")]
-position = Vector2(-64, 0)
-
-[node name="Node2D2" parent="VineDoor1" instance=ExtResource("5_klmf7")]
-position = Vector2(-48, 0)
-
-[node name="Node2D3" parent="VineDoor1" instance=ExtResource("5_klmf7")]
-position = Vector2(-32, 0)
-
-[node name="Node2D4" parent="VineDoor1" instance=ExtResource("5_klmf7")]
-position = Vector2(-16, 0)
-
-[node name="Node2D5" parent="VineDoor1" instance=ExtResource("5_klmf7")]
 
 [node name="evergree_tree_snowy" parent="." node_paths=PackedStringArray("tree") instance=ExtResource("6_l4noe")]
 position = Vector2(480, -97)
 tree = NodePath("../evergreen_tree")
 
 [node name="evergreen_tree" parent="." instance=ExtResource("7_q60ow")]
+visible = false
 position = Vector2(481, -96)
 
 [node name="evergree_tree_snowy2" parent="." node_paths=PackedStringArray("tree") instance=ExtResource("6_l4noe")]
@@ -1685,6 +1671,7 @@ position = Vector2(768, -333)
 tree = NodePath("../evergreen_tree2")
 
 [node name="evergreen_tree2" parent="." instance=ExtResource("7_q60ow")]
+visible = false
 position = Vector2(769, -332)
 
 [node name="evergree_tree_snowy3" parent="." node_paths=PackedStringArray("tree") instance=ExtResource("6_l4noe")]
@@ -1692,6 +1679,7 @@ position = Vector2(416, 50)
 tree = NodePath("../evergreen_tree3")
 
 [node name="evergreen_tree3" parent="." instance=ExtResource("7_q60ow")]
+visible = false
 position = Vector2(417, 51)
 
 [node name="InitDeadMorouzeTrigger" parent="." node_paths=PackedStringArray("deadMorouze") instance=ExtResource("8_7fr45")]
@@ -1718,6 +1706,7 @@ position = Vector2(577, -718)
 visible = false
 offset_right = 40.0
 offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxLine_eet5i")
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/DedMorozeHP"]
 layout_mode = 0
@@ -1728,7 +1717,8 @@ offset_bottom = 615.0
 scale = Vector2(1, 21.4)
 theme_override_styles/background = SubResource("StyleBoxLine_b6d1b")
 theme_override_styles/fill = SubResource("StyleBoxLine_lcjyw")
-value = 100.0
+max_value = 80.0
+value = 80.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/DedMorozeHP"]
 layout_mode = 0
