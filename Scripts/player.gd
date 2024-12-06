@@ -5,6 +5,7 @@ const SPEED = 100.0
 @export var projectile_scene = preload("res://Nodes/Projectiles/projectile_coal.tscn");
 
 var isRealod = false;
+var isGameOver = false;
 
 @export var hp = 3;
 
@@ -13,6 +14,10 @@ var isRealod = false;
 @export var imageHP3: TextureRect;
 
 func _physics_process(delta: float) -> void:
+	
+	if(isGameOver == true):
+		return;
+	
 	var direction: Vector2 = Vector2.ZERO;
 	direction.x = Input.get_axis("ui_left", "ui_right");
 	direction.y = Input.get_axis("ui_up", "ui_down");
@@ -53,7 +58,6 @@ func player():
 func _on_timer_timeout() -> void:
 	isRealod = false;
 
-
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if(body.has_method("enemy")):
 		sunstractHP();
@@ -68,3 +72,10 @@ func sunstractHP():
 		imageHP1.show();
 		imageHP2.hide();
 		imageHP3.hide();
+	if hp == 0:
+		isGameOver = true;
+		$CanvasLayer/GameOverWindow.show();
+		$CanvasLayer/InGameWindow.hide();
+
+func _on_button_button_down() -> void:
+	get_tree().reload_current_scene();
