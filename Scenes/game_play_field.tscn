@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://44b5cn2gupkx"]
+[gd_scene load_steps=3 format=3 uid="uid://44b5cn2gupkx"]
 
 [ext_resource type="PackedScene" uid="uid://4cfkabw8j0ss" path="res://Nodes/character.tscn" id="1_bu58g"]
+[ext_resource type="PackedScene" uid="uid://d0j3xom6hx16f" path="res://Nodes/Enemies/base_enemy.tscn" id="2_xp73g"]
 
 [node name="GamePlayField" type="Node2D"]
 
@@ -9,3 +10,7 @@
 [node name="Camera2D" type="Camera2D" parent="Character"]
 zoom = Vector2(0.75, 0.75)
 position_smoothing_enabled = true
+position_smoothing_speed = 1.0
+
+[node name="BaseEnemy" parent="." instance=ExtResource("2_xp73g")]
+position = Vector2(-653, -283)
