@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://4cfkabw8j0ss" path="res://Nodes/character.tscn" id="4_rr8qr"]
 [ext_resource type="PackedScene" uid="uid://br6fmq5flxfkf" path="res://Nodes/obstacles/evergree_tree_snowy.tscn" id="6_l4noe"]
 [ext_resource type="PackedScene" uid="uid://ls6mgl53ylni" path="res://Nodes/Enemies/overgreen_tree_enemy.tscn" id="7_q60ow"]
-[ext_resource type="PackedScene" uid="uid://cks3r28xlo46l" path="res://Nodes/bosses/init_dead_morouze_trigger.tscn" id="8_7fr45"]
+[ext_resource type="PackedScene" path="res://Nodes/bosses/init_dead_morouze_trigger.tscn" id="8_7fr45"]
 [ext_resource type="PackedScene" uid="uid://wbew8uvxi75k" path="res://Nodes/bosses/dead_morouze.tscn" id="9_f65jj"]
-[ext_resource type="PackedScene" uid="uid://84vi6bd2qv82" path="res://Nodes/obstacles/tree_obstacle.tscn" id="10_gld4h"]
+[ext_resource type="PackedScene" path="res://Nodes/obstacles/tree_obstacle.tscn" id="10_gld4h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gmfr5"]
 texture = ExtResource("1_51nh5")
