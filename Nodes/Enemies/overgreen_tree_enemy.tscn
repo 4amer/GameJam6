@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://ls6mgl53ylni"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/overgreen_tree_enemy.gd" id="1_kq20k"]
+[ext_resource type="Texture2D" uid="uid://dm8elkeceh48s" path="res://Art/Enemies/tree.png" id="2_vqjl8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mr04o"]
+size = Vector2(125, 182.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cxit8"]
+size = Vector2(162.5, 237.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f61lb"]
+size = Vector2(750, 762.5)
+
+[node name="BaseEnemy" type="CharacterBody2D"]
+scale = Vector2(0.16, 0.16)
+script = ExtResource("1_kq20k")
+hp = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 27.375)
+shape = SubResource("RectangleShape2D_mr04o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(7, 7)
+texture = ExtResource("2_vqjl8")
+region_rect = Rect2(49, 39, 15, 25)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_cxit8")
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource("RectangleShape2D_f61lb")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]

@@ -1,21 +1,149 @@
-[gd_scene load_steps=4 format=3 uid="uid://4cfkabw8j0ss"]
+[gd_scene load_steps=9 format=3 uid="uid://4cfkabw8j0ss"]
 
-[ext_resource type="Texture2D" uid="uid://eiaoluv44ue2" path="res://Art/icon.svg" id="1_53usc"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_hhvta"]
+[ext_resource type="Texture2D" uid="uid://bbm3m5a71qsp1" path="res://Art/Player/present.png" id="2_guif2"]
+[ext_resource type="Texture2D" uid="uid://bl2mrcv6whkw1" path="res://Art/UI/baricon2.png" id="3_y576h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjcrb"]
 size = Vector2(126, 126)
 
-[node name="Character" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j886s"]
+size = Vector2(137.5, 137.5)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_wb627"]
+color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_uss5v"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_y3dk7"]
+color = Color(0.910947, 0.0296901, 0.178854, 1)
+
+[node name="Character" type="CharacterBody2D" node_paths=PackedStringArray("imageHP1", "imageHP2", "imageHP3")]
+scale = Vector2(0.16, 0.16)
 script = ExtResource("1_hhvta")
+bullet_speed = 300
+imageHP1 = NodePath("CanvasLayer/InGameWindow/HBoxContainer/TextureRect")
+imageHP2 = NodePath("CanvasLayer/InGameWindow/HBoxContainer/TextureRect2")
+imageHP3 = NodePath("CanvasLayer/InGameWindow/HBoxContainer/TextureRect3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_xjcrb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_53usc")
+texture_filter = 1
+scale = Vector2(7, 7)
+texture = ExtResource("2_guif2")
 
 [node name="aim" type="Node2D" parent="."]
 
 [node name="shooterPoint" type="Node2D" parent="aim"]
 position = Vector2(150, 0)
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+scale = Vector2(6.25, 6.25)
+current = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_j886s")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InGameWindow" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxLine_wb627")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/InGameWindow"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 84.0
+offset_bottom = 56.0
+scale = Vector2(5, 5)
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/InGameWindow/HBoxContainer"]
+modulate = Color(0.899234, 3.56168e-06, 0.454788, 1)
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("3_y576h")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/InGameWindow/HBoxContainer"]
+modulate = Color(0.899234, 3.56168e-06, 0.454788, 1)
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("3_y576h")
+stretch_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/InGameWindow/HBoxContainer"]
+modulate = Color(0.899234, 3.56168e-06, 0.454788, 1)
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("3_y576h")
+stretch_mode = 2
+
+[node name="DedMorozeHP" type="Panel" parent="CanvasLayer/InGameWindow"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/InGameWindow/DedMorozeHP"]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 585.0
+offset_right = 740.0
+offset_bottom = 615.0
+scale = Vector2(1, 21.4)
+theme_override_styles/background = SubResource("StyleBoxLine_uss5v")
+theme_override_styles/fill = SubResource("StyleBoxLine_y3dk7")
+value = 100.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/InGameWindow/DedMorozeHP"]
+layout_mode = 0
+offset_left = 523.0
+offset_top = 556.0
+offset_right = 673.0
+offset_bottom = 596.0
+bbcode_enabled = true
+text = "[wave][rainbow]DEAD MOROUZE"
+tab_size = 10
+
+[node name="GameOverWindow" type="Panel" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/GameOverWindow"]
+layout_mode = 0
+offset_left = 428.0
+offset_top = 417.0
+offset_right = 728.0
+offset_bottom = 517.0
+text = "RESTART"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/GameOverWindow"]
+layout_mode = 0
+offset_left = 373.0
+offset_top = 280.0
+offset_right = 773.0
+offset_bottom = 480.0
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center][wave]GAME OVER"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="button_down" from="CanvasLayer/GameOverWindow/Button" to="." method="_on_button_button_down"]
