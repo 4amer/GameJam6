@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=13 format=3 uid="uid://4cfkabw8j0ss"]
+=======
+[gd_scene load_steps=12 format=3 uid="uid://4cfkabw8j0ss"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_hhvta"]
 [ext_resource type="Texture2D" uid="uid://bbm3m5a71qsp1" path="res://Art/Player/present.png" id="2_guif2"]
@@ -6,7 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://bl2mrcv6whkw1" path="res://Art/UI/baricon2.png" id="3_y576h"]
 [ext_resource type="AudioStream" uid="uid://b6bsaepgol5v7" path="res://Sound/death.mp3" id="5_ngv02"]
 [ext_resource type="AudioStream" uid="uid://nnk8srrfp40" path="res://Sound/characterhit.mp3" id="6_dutyj"]
+<<<<<<< Updated upstream
 [ext_resource type="AudioStream" uid="uid://boe4kpqta25ah" path="res://Sound/walking.mp3" id="7_qq7ce"]
+=======
+>>>>>>> Stashed changes
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjcrb"]
 size = Vector2(126, 126)
@@ -158,10 +165,13 @@ stream = ExtResource("5_ngv02")
 [node name="characterhit" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_dutyj")
 
+<<<<<<< Updated upstream
 [node name="walking" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_qq7ce")
 volume_db = 13.0
 
+=======
+>>>>>>> Stashed changes
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="button_down" from="CanvasLayer/GameOverWindow/Button" to="." method="_on_button_button_down"]
