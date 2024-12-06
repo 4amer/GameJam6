@@ -10,7 +10,7 @@ size = Vector2(75, 128)
 size = Vector2(87.5, 134)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_via5l"]
-radius = 412.5
+radius = 675.26
 
 [node name="BaseEnemy" type="CharacterBody2D"]
 scale = Vector2(0.16, 0.16)

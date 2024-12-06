@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://44b5cn2gupkx"]
+[gd_scene load_steps=12 format=3 uid="uid://44b5cn2gupkx"]
 
 [ext_resource type="PackedScene" uid="uid://4cfkabw8j0ss" path="res://Nodes/character.tscn" id="1_bu58g"]
 [ext_resource type="PackedScene" uid="uid://d0j3xom6hx16f" path="res://Nodes/Enemies/base_enemy.tscn" id="2_xp73g"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dfrc2v247wyvu" path="res://Art/Tiles/Assets.png" id="4_dny5u"]
 [ext_resource type="PackedScene" uid="uid://bvvqjwe5jk2r2" path="res://Nodes/obstacles/vine.tscn" id="5_lb4xq"]
 [ext_resource type="PackedScene" uid="uid://bp5xuj7160746" path="res://Nodes/obstacles/evergreen_tree.tscn" id="6_35thb"]
+[ext_resource type="PackedScene" uid="uid://r2cbe1i2jxi8" path="res://Nodes/trigger_to_next_level.tscn" id="7_x8xqd"]
+[ext_resource type="PackedScene" uid="uid://c8gwjp00t4b57" path="res://Scenes/game_play_field_forest.tscn" id="8_exrd5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gmfr5"]
 texture = ExtResource("3_077sg")
@@ -1615,3 +1617,8 @@ door = NodePath("../VineDoor1")
 [node name="EvergreenTree4" parent="." node_paths=PackedStringArray("door") instance=ExtResource("6_35thb")]
 position = Vector2(364, -170)
 door = NodePath("../VineDoor2")
+
+[node name="TriggerToNextLevel" parent="." instance=ExtResource("7_x8xqd")]
+position = Vector2(145, -783)
+scale = Vector2(3.28, 2.68)
+scene = ExtResource("8_exrd5")
