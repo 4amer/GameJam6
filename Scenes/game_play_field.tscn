@@ -14,3 +14,4 @@ position_smoothing_speed = 1.0
 
 [node name="BaseEnemy" parent="." instance=ExtResource("2_xp73g")]
 position = Vector2(-653, -283)
+hp = 2
