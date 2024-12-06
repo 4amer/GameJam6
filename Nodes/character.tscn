@@ -14,3 +14,8 @@ shape = SubResource("RectangleShape2D_xjcrb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_53usc")
+
+[node name="aim" type="Node2D" parent="."]
+
+[node name="shooterPoint" type="Node2D" parent="aim"]
+position = Vector2(150, 0)

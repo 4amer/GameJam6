@@ -7,9 +7,11 @@
 radius = 32.0156
 
 [node name="Projectile_Coal" type="RigidBody2D"]
+gravity_scale = 0.0
 script = ExtResource("1_g8y12")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visibility_layer = 2
 shape = SubResource("CircleShape2D_qtt2p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
