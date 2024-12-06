@@ -1,3 +1,62 @@
-[gd_scene format=3 uid="uid://dglxuogqtqkqp"]
+[gd_scene load_steps=3 format=3 uid="uid://dglxuogqtqkqp"]
 
-[node name="MainScene" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://cqrxqctpifwtj" path="res://Art/BGMainMenu/background_glacial_mountains.png" id="1_h1e60"]
+[ext_resource type="Script" path="res://Scripts/main_scene.gd" id="1_q7h74"]
+
+[node name="MainScene" type="CanvasLayer"]
+script = ExtResource("1_q7h74")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_h1e60")
+
+[node name="Panel" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 759.0
+offset_top = 171.0
+offset_right = 1059.0
+offset_bottom = 571.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 849.0
+offset_top = 102.0
+offset_right = 1049.0
+offset_bottom = 182.0
+theme_override_font_sizes/bold_italics_font_size = 50
+theme_override_font_sizes/normal_font_size = 45
+text = "Story"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 35.0
+offset_right = 676.0
+offset_bottom = 235.0
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[wave]I was reborn as a gift to destroy the new year"
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 183.0
+offset_top = 351.0
+offset_right = 483.0
+offset_bottom = 451.0
+theme_override_font_sizes/font_size = 40
+text = "Start game"
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
