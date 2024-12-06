@@ -3,7 +3,7 @@ extends CanvasLayer
 var scene = preload("res://Scenes/game_play_field.tscn")
 
 func _ready() -> void:
-	
+	$mainost.play()
 	pass;
 
 
