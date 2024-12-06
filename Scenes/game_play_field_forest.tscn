@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c8gwjp00t4b57"]
+[gd_scene load_steps=16 format=3 uid="uid://c8gwjp00t4b57"]
 
 [ext_resource type="Texture2D" uid="uid://bwcjrtbxll7wo" path="res://Art/Tiles/tileset.png" id="1_51nh5"]
 [ext_resource type="Texture2D" uid="uid://dfrc2v247wyvu" path="res://Art/Tiles/Assets.png" id="2_60y3q"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://bvvqjwe5jk2r2" path="res://Nodes/obstacles/vine.tscn" id="5_klmf7"]
 [ext_resource type="PackedScene" uid="uid://br6fmq5flxfkf" path="res://Nodes/obstacles/evergree_tree_snowy.tscn" id="6_l4noe"]
 [ext_resource type="PackedScene" uid="uid://ls6mgl53ylni" path="res://Nodes/Enemies/overgreen_tree_enemy.tscn" id="7_q60ow"]
+[ext_resource type="PackedScene" uid="uid://cks3r28xlo46l" path="res://Nodes/bosses/init_dead_morouze_trigger.tscn" id="8_7fr45"]
+[ext_resource type="PackedScene" uid="uid://wbew8uvxi75k" path="res://Nodes/bosses/dead_morouze.tscn" id="9_f65jj"]
+[ext_resource type="PackedScene" uid="uid://84vi6bd2qv82" path="res://Nodes/obstacles/tree_obstacle.tscn" id="10_gld4h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gmfr5"]
 texture = ExtResource("1_51nh5")
@@ -1594,6 +1597,11 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_gmfr5")
 sources/1 = SubResource("TileSetAtlasSource_seqqt")
 
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_b6d1b"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_lcjyw"]
+color = Color(0.910947, 0.0296901, 0.178854, 1)
+
 [node name="GamePlayField" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1610,6 +1618,7 @@ position = Vector2(-112, -201)
 hp = 2
 
 [node name="Character" parent="." instance=ExtResource("4_rr8qr")]
+position = Vector2(577, -692)
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
 zoom = Vector2(3, 3)
@@ -1652,3 +1661,47 @@ tree = NodePath("../evergreen_tree3")
 
 [node name="evergreen_tree3" parent="." instance=ExtResource("7_q60ow")]
 position = Vector2(417, 51)
+
+[node name="InitDeadMorouzeTrigger" parent="." node_paths=PackedStringArray("deadMorouze") instance=ExtResource("8_7fr45")]
+position = Vector2(573, -797)
+scale = Vector2(35.52, 1)
+deadMorouze = NodePath("../DeadMorouze")
+
+[node name="DeadMorouze" parent="." node_paths=PackedStringArray("obstacle", "pointToSetPosition") instance=ExtResource("9_f65jj")]
+position = Vector2(574, -865)
+obstacle = NodePath("../TreeObstacle")
+pointToSetPosition = NodePath("../Node2D")
+
+[node name="TreeObstacle" parent="." instance=ExtResource("10_gld4h")]
+position = Vector2(545, -718)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(577, -718)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DedMorozeHP" type="Panel" parent="CanvasLayer"]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/DedMorozeHP"]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 585.0
+offset_right = 740.0
+offset_bottom = 615.0
+scale = Vector2(1, 21.4)
+theme_override_styles/background = SubResource("StyleBoxLine_b6d1b")
+theme_override_styles/fill = SubResource("StyleBoxLine_lcjyw")
+value = 100.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/DedMorozeHP"]
+layout_mode = 0
+offset_left = 523.0
+offset_top = 556.0
+offset_right = 673.0
+offset_bottom = 596.0
+bbcode_enabled = true
+text = "[wave][rainbow]DEAD MOROUZE"
+tab_size = 10

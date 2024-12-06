@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://84vi6bd2qv82"]
+
+[ext_resource type="Texture2D" uid="uid://bwcjrtbxll7wo" path="res://Art/Tiles/tileset.png" id="1_h6g72"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54qsh"]
+size = Vector2(32, 48)
+
+[node name="TreeObstacle" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_54qsh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_h6g72")
+region_enabled = true
+region_rect = Rect2(64, 304, 32, 48)
